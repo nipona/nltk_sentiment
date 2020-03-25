@@ -1,4 +1,4 @@
-##Sentiment Analysis for feedback data
+## Sentiment Analysis for feedback data
 
 
 * Sentiment Analysis, although a vastly researched subject, suffers in some areas. One major reason for this is the lack of domain specific labelled data. Without labelled data, our ability to run and train machine learning models get affected and we are not able to produce results. Here, we are going to try out two pre-trained sentiment libraries nltk and textblob.
@@ -9,15 +9,17 @@
 
 1. Download the code from here
 
-https://github.com/nipona/sentiment.git
+```https://github.com/nipona/sentiment.git```
 
 2. Install the following libraries in python (if not already installed)
 
+```
 pip install nltk
 pip install textblob
+```
 
 3. Test the output using get_sentiment file
-
+```
 text="I am happy with the services provided"
 get_sentiment(text, algo="nltk")
 0.5719
@@ -28,5 +30,5 @@ get_sentiment(text, algo="nltk")
 -0.5106
 get_sentiment(text, algo="textblob")
 -0.09999999999999998
-
+```
 ### Although we tested with very limited sentences, but nltk seems to be working better than textblob. You can also test with sentences from different domains and compare the results.
