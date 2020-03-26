@@ -31,4 +31,28 @@ get_sentiment(text, algo="nltk")
 get_sentiment(text, algo="textblob")
 -0.09999999999999998
 ```
-### Although we tested with very limited sentences, but nltk seems to be working better than textblob. You can also test with sentences from different domains and compare the results.
+
+### Analysis
+
+* Which one words better, nltk or textblob?
+
+Although we tested with very limited sentences, but nltk seems to be working better than textblob. The difference is negligible with positive feedbacks but nltk seems to be producing better results with negative feedback data. You can also test with sentences from different domains and compare the results.
+
+* What is the advantage with bag of words approach?
+
+Sentiment Analysis suffers from lack of availability of labelled dataset. Labelling data is a tiresome and expensive process and such datasets may not be available for many domains. Bag of words is a very simple approach which can be used for sentiment analysis when getting labelled dataset is not a viable option.
+
+* When is bag of words not a good option?
+
+Bag of words may not be a good option for certain domains. For example, let us test few examples from financial domain:
+
+```
+text = “I want to know the current price of the share”
+get_sentiment(text, algo=”nltk”)
+0.3612
+text = “We want to discuss about the new bond issue”
+get_sentiment(text, algo=”textblob”)
+0.136
+```
+
+So, we notice that although both the sentences are neutral in financial sense but out algorithms, both nltk and vader, think they carry some sentiment. Hence, bag-of-words may not work from some domains like Finance, Medical etc.
